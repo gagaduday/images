@@ -12,6 +12,12 @@ class SearchBar extends React.Component {
     this.props.fetchImages(this.state.term);
   };
 
+  onInputChange = e => {
+    this.setState({
+      term: e.target.value
+    });
+  };
+
   render() {
     return (
       <div className="ui segment">
@@ -21,7 +27,7 @@ class SearchBar extends React.Component {
             <input
               type="text"
               value={this.state.term}
-              onChange={e => this.setState({ term: e.target.value })}
+              onChange={this.onInputChange}
             />
           </div>
         </form>

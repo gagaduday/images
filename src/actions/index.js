@@ -2,7 +2,7 @@ import unsplash from "../apis/unsplash";
 
 export const fetchImages = term => async dispatch => {
   const response = await unsplash.get("/search/photos", {
-    params: term
+    params: { query: term }
   });
   dispatch({
     type: "FETCH_IMAGES",

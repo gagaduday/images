@@ -1,3 +1,5 @@
+import { combineReducers } from "redux";
+
 const fetchImagesReducer = (state = [], action) => {
   switch (action.type) {
     case "FETCH_IMAGES":
@@ -7,4 +9,6 @@ const fetchImagesReducer = (state = [], action) => {
   }
 };
 
-export default fetchImagesReducer;
+export default combineReducers({
+  images: fetchImagesReducer
+});
